@@ -2,7 +2,7 @@ node_modules/**
 webview-src/**
 src/**
 .vscode/**
-*.map
+**/*.map
 tsconfig*.json
 vite.*.config.ts
 esbuild.mjs
@@ -14,3 +14,5 @@ pnpm-lock.yaml
 .claude/**
 scripts/**
 icon.svg
+media/**
+baba.mov

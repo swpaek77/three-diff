@@ -1,6 +1,19 @@
 # Three File Compare
 
-VSCode extension that compares **3 files side by side** — like IntelliJ's 3-way diff.
+A VS Code extension that compares **3 files side by side** — like IntelliJ's 3-way diff.
+
+## Demo
+
+<video
+  src="https://raw.githubusercontent.com/swpaek77/three-diff/main/media/three-diff-demo.mp4"
+  poster="https://raw.githubusercontent.com/swpaek77/three-diff/main/media/three-diff-demo-poster.png"
+  controls
+  muted
+  playsinline
+  width="960">
+</video>
+
+If the embedded preview does not render in your current Markdown viewer, [open the demo video directly](https://raw.githubusercontent.com/swpaek77/three-diff/main/media/three-diff-demo.mp4).
 
 ## Features
 
