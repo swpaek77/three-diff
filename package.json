@@ -3,7 +3,7 @@
   "displayName": "Three File Compare",
   "description": "Compare 3 files side by side — like IntelliJ's 3-way diff",
   "version": "0.1.1",
-  "publisher": "SeungwooPaek",
+  "publisher": "swpaek77",
   "engines": {
     "vscode": "^1.85.0"
   },
