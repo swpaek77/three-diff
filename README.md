@@ -37,6 +37,7 @@ The panel opens automatically when the 3rd file is added.
 
 - Click a **filename header** to open that file in the editor
 - All 3 panels **scroll in sync** — scroll any panel to navigate all
+- Use **`Cmd/Ctrl+F`** inside the compare view to search with VS Code's built-in webview find widget
 
 ## Legend
 

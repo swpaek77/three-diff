@@ -69,6 +69,7 @@ function openComparePanel(
     vscode.ViewColumn.One,
     {
       enableScripts: true,
+      enableFindWidget: true,
       localResourceRoots: [
         vscode.Uri.joinPath(context.extensionUri, "dist", "webview"),
       ],
