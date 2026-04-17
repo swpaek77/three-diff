@@ -1,5 +1,5 @@
 {
-  "name": "three-file-compare",
+  "name": "three-compare",
   "displayName": "Three File Compare",
   "description": "Compare 3 files side by side — like IntelliJ's 3-way diff",
   "version": "0.1.1",
@@ -19,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/swpaek77/three-file-compare"
+    "url": "https://github.com/swpaek77/three-compare"
   },
   "license": "MIT",
   "icon": "icon.png",
@@ -28,12 +28,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "three-file-compare.compare",
+        "command": "three-compare.compare",
         "title": "Compare 3 Files",
         "category": "Three Compare"
       },
       {
-        "command": "three-file-compare.compareSelected",
+        "command": "three-compare.compareSelected",
         "title": "Three File Compare: Add to Compare",
         "category": "Three Compare"
       }
@@ -41,7 +41,7 @@
     "menus": {
       "explorer/context": [
         {
-          "command": "three-file-compare.compareSelected",
+          "command": "three-compare.compareSelected",
           "group": "3_compare"
         }
       ]

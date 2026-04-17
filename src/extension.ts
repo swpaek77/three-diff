@@ -6,7 +6,7 @@ const selectedFiles: vscode.Uri[] = [];
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    vscode.commands.registerCommand("three-file-compare.compare", async () => {
+    vscode.commands.registerCommand("three-compare.compare", async () => {
       const uris = await vscode.window.showOpenDialog({
         canSelectMany: true,
         openLabel: "Select 3 Files to Compare",
@@ -19,12 +19,12 @@ export function activate(context: vscode.ExtensionContext) {
       }
 
       openComparePanel(context, uris);
-    })
+    }),
   );
 
   context.subscriptions.push(
     vscode.commands.registerCommand(
-      "three-file-compare.compareSelected",
+      "three-compare.compareSelected",
       async (clickedUri: vscode.Uri, selectedUris: vscode.Uri[]) => {
         const toAdd = selectedUris?.length ? selectedUris : [clickedUri];
 
@@ -36,7 +36,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         if (selectedFiles.length < 3) {
           vscode.window.showInformationMessage(
-            `Three Compare: ${selectedFiles.length}/3 files selected. Right-click more files.`
+            `Three Compare: ${selectedFiles.length}/3 files selected. Right-click more files.`,
           );
           return;
         }
@@ -46,12 +46,15 @@ export function activate(context: vscode.ExtensionContext) {
           selectedFiles.length = 0; // discard any extra files beyond 3
           openComparePanel(context, files);
         }
-      }
-    )
+      },
+    ),
   );
 }
 
-function openComparePanel(context: vscode.ExtensionContext, uris: vscode.Uri[]) {
+function openComparePanel(
+  context: vscode.ExtensionContext,
+  uris: vscode.Uri[],
+) {
   // Read files up front so we can embed them in the HTML directly.
   // This avoids the ready-message race condition entirely.
   const fileData = uris.map((uri) => ({
@@ -66,12 +69,18 @@ function openComparePanel(context: vscode.ExtensionContext, uris: vscode.Uri[]) 
     vscode.ViewColumn.One,
     {
       enableScripts: true,
-      localResourceRoots: [vscode.Uri.joinPath(context.extensionUri, "dist", "webview")],
+      localResourceRoots: [
+        vscode.Uri.joinPath(context.extensionUri, "dist", "webview"),
+      ],
       retainContextWhenHidden: true,
-    }
+    },
   );
 
-  const webviewDistPath = vscode.Uri.joinPath(context.extensionUri, "dist", "webview");
+  const webviewDistPath = vscode.Uri.joinPath(
+    context.extensionUri,
+    "dist",
+    "webview",
+  );
 
   // Register handler BEFORE setting html so we never miss a "ready" message.
   panel.webview.onDidReceiveMessage(
@@ -85,7 +94,7 @@ function openComparePanel(context: vscode.ExtensionContext, uris: vscode.Uri[]) 
       }
     },
     undefined,
-    context.subscriptions
+    context.subscriptions,
   );
 
   panel.webview.html = buildHtml(panel.webview, webviewDistPath, fileData);
@@ -100,7 +109,7 @@ interface FilePayload {
 function buildHtml(
   webview: vscode.Webview,
   distUri: vscode.Uri,
-  fileData: FilePayload[]
+  fileData: FilePayload[],
 ): string {
   const indexPath = vscode.Uri.joinPath(distUri, "index.html");
   let html = fs.readFileSync(indexPath.fsPath, "utf-8");
@@ -123,7 +132,7 @@ function buildHtml(
 
   html = html.replace(
     "<head>",
-    `<head>\n    <meta http-equiv="Content-Security-Policy" content="${csp}">`
+    `<head>\n    <meta http-equiv="Content-Security-Policy" content="${csp}">`,
   );
 
   // Embed file data directly in the HTML so the webview never needs to
@@ -131,7 +140,7 @@ function buildHtml(
   const safeJson = JSON.stringify(fileData).replace(/</g, "\\u003c");
   html = html.replace(
     "</head>",
-    `  <script>window.__THREE_COMPARE_FILES__=${safeJson};</script>\n  </head>`
+    `  <script>window.__THREE_COMPARE_FILES__=${safeJson};</script>\n  </head>`,
   );
 
   return html;
