@@ -1,0 +1,14 @@
+node_modules/**
+webview-src/**
+src/**
+.vscode/**
+*.map
+tsconfig*.json
+vite.*.config.ts
+esbuild.mjs
+tailwind.config.js
+postcss.config.js
+pnpm-lock.yaml
+.gitignore
+scripts/**
+icon.svg

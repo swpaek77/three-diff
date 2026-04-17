@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── VSCode CSS variables ─────────────────────────────────── */
+:root {
+  --bg: var(--vscode-editor-background, #1e1e1e);
+  --fg: var(--vscode-editor-foreground, #d4d4d4);
+  --border: var(--panel-border, var(--vscode-panel-border, #3c3c3c));
+  --header-bg: var(--vscode-editorGroupHeader-tabsBackground, #252526);
+  --font-size: var(--vscode-editor-font-size, 13px);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--vscode-font-family, -apple-system, sans-serif);
+  font-size: var(--vscode-font-size, 13px);
+}
+
+.code-font {
+  font-family: var(--vscode-editor-font-family, 'Menlo', 'Monaco', 'Consolas', monospace);
+  font-size: var(--font-size);
+  line-height: 1.5;
+}
+
+/* ── Diff row backgrounds ─────────────────────────────────── */
+.bg-diff-changed { background-color: rgba(210, 153, 34, 0.15); }
+.bg-diff-only    { background-color: rgba(248, 81, 73, 0.18); }
+.bg-diff-spacer  { background-color: rgba(255, 255, 255, 0.03); }
+
+/* ── Scrollbars ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--vscode-scrollbarSlider-background, rgba(121,121,121,0.4));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vscode-scrollbarSlider-hoverBackground, rgba(100,100,100,0.7));
+}
+
+/* ── Simple tokenizer colors (VSCode Dark+ palette) ─────── */
+.tc-cmt  { color: #6a9955; }
+.tc-str  { color: #ce9178; }
+.tc-kw   { color: #569cd6; }
+.tc-type { color: #4ec9b0; }
+.tc-fn   { color: #dcdcaa; }
+.tc-num  { color: #b5cea8; }
+
+/* ── Word-level diff marks ───────────────────────────────── */
+mark.wd-del {
+  background: rgba(248, 81, 73, 0.45);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+  font-style: normal;
+}
+mark.wd-add {
+  background: rgba(46, 160, 67, 0.45);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+  font-style: normal;
+}
+

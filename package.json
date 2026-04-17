@@ -1,0 +1,78 @@
+{
+  "name": "three-compare",
+  "displayName": "Three File Compare",
+  "description": "Compare 3 files side by side — like IntelliJ's 3-way diff",
+  "version": "0.1.1",
+  "publisher": "SeungwooPaek",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "diff",
+    "compare",
+    "3-way",
+    "three-way",
+    "merge"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/three-compare"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "three-compare.compare",
+        "title": "Compare 3 Files",
+        "category": "Three Compare"
+      },
+      {
+        "command": "three-compare.compareSelected",
+        "title": "Three File Compare: Add to Compare",
+        "category": "Three Compare"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "three-compare.compareSelected",
+          "group": "3_compare"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "pnpm run build:ext && pnpm run build:webview",
+    "build:ext": "node esbuild.mjs",
+    "build:webview": "vite build --config vite.webview.config.ts",
+    "watch": "concurrently \"node esbuild.mjs --watch\" \"vite build --config vite.webview.config.ts --watch\"",
+    "dev": "pnpm run build && code --extensionDevelopmentPath=${PWD}",
+    "package": "pnpm vsce package --no-dependencies",
+    "release": "pnpm version patch --no-git-tag-version && pnpm run build && pnpm vsce package --no-dependencies",
+    "lint": "eslint src webview-src --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^8.2.0",
+    "esbuild": "^0.23.0",
+    "postcss": "^8.4.47",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.6.0",
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "diff": "^7.0.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  }
+}

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="16" fill="#1e1e1e"/>
+
+  <!-- Panel dividers -->
+  <!-- Panel A (left) -->
+  <rect x="6" y="10" width="34" height="108" rx="4" fill="#252526"/>
+  <!-- Panel B (center) -->
+  <rect x="47" y="10" width="34" height="108" rx="4" fill="#252526"/>
+  <!-- Panel C (right) -->
+  <rect x="88" y="10" width="34" height="108" rx="4" fill="#252526"/>
+
+  <!-- Code lines - Panel A -->
+  <rect x="11" y="18" width="22" height="3" rx="1.5" fill="#4ec9b0" opacity="0.9"/>
+  <rect x="11" y="25" width="18" height="3" rx="1.5" fill="#569cd6" opacity="0.9"/>
+  <rect x="11" y="32" width="24" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+  <!-- Changed line A (yellow) -->
+  <rect x="6" y="38" width="34" height="9" rx="0" fill="rgba(210,153,34,0.18)"/>
+  <rect x="6" y="38" width="3" height="9" rx="0" fill="#d29922"/>
+  <rect x="11" y="41" width="20" height="3" rx="1.5" fill="#ce9178" opacity="0.9"/>
+  <rect x="11" y="51" width="16" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+  <rect x="11" y="58" width="20" height="3" rx="1.5" fill="#569cd6" opacity="0.9"/>
+  <!-- Only-in-A line (red) -->
+  <rect x="6" y="64" width="34" height="9" rx="0" fill="rgba(248,81,73,0.2)"/>
+  <rect x="6" y="64" width="3" height="9" rx="0" fill="#f85149"/>
+  <rect x="11" y="67" width="24" height="3" rx="1.5" fill="#dcdcaa" opacity="0.8"/>
+  <rect x="11" y="77" width="18" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+  <rect x="11" y="84" width="22" height="3" rx="1.5" fill="#4ec9b0" opacity="0.9"/>
+  <rect x="11" y="91" width="14" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+
+  <!-- Code lines - Panel B -->
+  <rect x="52" y="18" width="22" height="3" rx="1.5" fill="#4ec9b0" opacity="0.9"/>
+  <rect x="52" y="25" width="18" height="3" rx="1.5" fill="#569cd6" opacity="0.9"/>
+  <rect x="52" y="32" width="24" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+  <!-- Changed line B (yellow) -->
+  <rect x="47" y="38" width="34" height="9" rx="0" fill="rgba(210,153,34,0.18)"/>
+  <rect x="47" y="38" width="3" height="9" rx="0" fill="#d29922"/>
+  <rect x="52" y="41" width="26" height="3" rx="1.5" fill="#ce9178" opacity="0.9"/>
+  <rect x="52" y="51" width="16" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+  <rect x="52" y="58" width="20" height="3" rx="1.5" fill="#569cd6" opacity="0.9"/>
+  <!-- Spacer line -->
+  <rect x="47" y="64" width="34" height="9" rx="0" fill="rgba(255,255,255,0.04)"/>
+  <rect x="52" y="77" width="18" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+  <rect x="52" y="84" width="22" height="3" rx="1.5" fill="#4ec9b0" opacity="0.9"/>
+  <rect x="52" y="91" width="14" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+
+  <!-- Code lines - Panel C -->
+  <rect x="93" y="18" width="22" height="3" rx="1.5" fill="#4ec9b0" opacity="0.9"/>
+  <rect x="93" y="25" width="18" height="3" rx="1.5" fill="#569cd6" opacity="0.9"/>
+  <rect x="93" y="32" width="24" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+  <!-- Changed line C (yellow) -->
+  <rect x="88" y="38" width="34" height="9" rx="0" fill="rgba(210,153,34,0.18)"/>
+  <rect x="88" y="38" width="3" height="9" rx="0" fill="#d29922"/>
+  <rect x="93" y="41" width="16" height="3" rx="1.5" fill="#ce9178" opacity="0.9"/>
+  <rect x="93" y="51" width="16" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+  <rect x="93" y="58" width="20" height="3" rx="1.5" fill="#569cd6" opacity="0.9"/>
+  <!-- Spacer line -->
+  <rect x="88" y="64" width="34" height="9" rx="0" fill="rgba(255,255,255,0.04)"/>
+  <rect x="93" y="77" width="18" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+  <rect x="93" y="84" width="22" height="3" rx="1.5" fill="#4ec9b0" opacity="0.9"/>
+  <rect x="93" y="91" width="14" height="3" rx="1.5" fill="#d4d4d4" opacity="0.5"/>
+
+  <!-- "3" label badge -->
+  <circle cx="64" cy="112" r="9" fill="#569cd6"/>
+  <text x="64" y="117" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="white">3</text>
+</svg>
