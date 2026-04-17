@@ -6,7 +6,7 @@ const selectedFiles: vscode.Uri[] = [];
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    vscode.commands.registerCommand("three-compare.compare", async () => {
+    vscode.commands.registerCommand("three-file-compare.compare", async () => {
       const uris = await vscode.window.showOpenDialog({
         canSelectMany: true,
         openLabel: "Select 3 Files to Compare",
@@ -24,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   context.subscriptions.push(
     vscode.commands.registerCommand(
-      "three-compare.compareSelected",
+      "three-file-compare.compareSelected",
       async (clickedUri: vscode.Uri, selectedUris: vscode.Uri[]) => {
         const toAdd = selectedUris?.length ? selectedUris : [clickedUri];
 
